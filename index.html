@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <title>សំណួរសាកល្បងភាពស្មោះត្រង់</title>
+  <style>
+    body { font-family: 'Khmer OS Battambang', sans-serif; padding: 20px; }
+    .question { margin-bottom: 20px; }
+    .result { font-size: 20px; font-weight: bold; color: green; }
+    button { padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #2980b9; }
+  </style>
+</head>
+<body>
+  <h1>សំណួរសាកល្បងភាពស្មោះត្រង់</h1>
+  <form id="quizForm">
+
+    <div class="question">
+      <p>1. តើអ្នកធ្លាប់បង្រួមពិតប្រាកដចិត្តមួយទេ?</p>
+      <label><input type="radio" name="q1" value="true"> បាទ/ចាស ✓</label><br>
+      <label><input type="radio" name="q1" value="false"> ទេ</label><br>
+      <label><input type="radio" name="q1" value="false"> មិនប្រាកដ</label>
+    </div>
+
+    <div class="question">
+      <p>2. តើអ្នកធ្លាប់និយាយមិនពិតដើម្បីគេចបញ្ហាមែនទេ?</p>
+      <label><input type="radio" name="q2" value="true"> ទេ ✓</label><br>
+      <label><input type="radio" name="q2" value="false"> មាន</label><br>
+      <label><input type="radio" name="q2" value="false"> ម្តងម្កាល</label>
+    </div>
+
+    <div class="question">
+      <p>3. តើអ្នកធ្លាប់បំភាន់មនុស្សដោយចេតនាមែនទេ?</p>
+      <label><input type="radio" name="q3" value="true"> ទេ ✓</label><br>
+      <label><input type="radio" name="q3" value="false"> បាទ/ចាស</label><br>
+      <label><input type="radio" name="q3" value="false"> មិនប្រាកដ</label>
+    </div>
+
+    <div class="question">
+      <p>4. តើអ្នកស្មោះត្រង់ក្នុងការប្រើប្រាស់ប្រាក់មែនទេ?</p>
+      <label><input type="radio" name="q4" value="true"> មាន ✓</label><br>
+      <label><input type="radio" name="q4" value="false"> មិនខាន</label><br>
+      <label><input type="radio" name="q4" value="false"> ម្តងម្កាល</label>
+    </div>
+
+    <div class="question">
+      <p>5. តើអ្នកអាចទុកចិត្តចែករំលែកអាថ៌កំបាំងបានទេ?</p>
+      <label><input type="radio" name="q5" value="true"> បាទ/ចាស ✓</label><br>
+      <label><input type="radio" name="q5" value="false"> ទេ</label><br>
+      <label><input type="radio" name="q5" value="false"> មិនប្រាកដ</label>
+    </div>
+
+    <div class="question">
+      <p>6. តើអ្នកធ្លាប់លួចអ្វីមួយមែនទេ?</p>
+      <label><input type="radio" name="q6" value="true"> ទេ ✓</label><br>
+      <label><input type="radio" name="q6" value="false"> បាទ/ចាស</label><br>
+      <label><input type="radio" name="q6" value="false"> ម្តងម្កាល</label>
+    </div>
+
+    <div class="question">
+      <p>7. តើអ្នកស្មោះត្រង់ក្នុងសេចក្ដីស្រឡាញ់មែនទេ?</p>
+      <label><input type="radio" name="q7" value="true"> បាទ/ចាស ✓</label><br>
+      <label><input type="radio" name="q7" value="false"> មិនដឹង</label><br>
+      <label><input type="radio" name="q7" value="false"> ទេ</label>
+    </div>
+
+    <div class="question">
+      <p>8. តើអ្នកធ្លាប់ឆែកទូរស័ព្ទគេដោយមិនសុំទេ?</p>
+      <label><input type="radio" name="q8" value="true"> ទេ ✓</label><br>
+      <label><input type="radio" name="q8" value="false"> បាទ/ចាស</label><br>
+      <label><input type="radio" name="q8" value="false"> ម្តងម្កាល</label>
+    </div>
+
+    <div class="question">
+      <p>9. តើអ្នកគិតពីសកម្មភាពមុនពេលធ្វើថាត្រឹមត្រូវ?</p>
+      <label><input type="radio" name="q9" value="true"> បាទ/ចាស ✓</label><br>
+      <label><input type="radio" name="q9" value="false"> មិនខាន</label><br>
+      <label><input type="radio" name="q9" value="false"> មិនដឹង</label>
+    </div>
+
+    <div class="question">
+      <p>10. តើអ្នកធ្លាប់ជួយគេដោយគ្មានបំណងបង្រួបគុណមែនទេ?</p>
+      <label><input type="radio" name="q10" value="true"> បាទ/ចាស ✓</label><br>
+      <label><input type="radio" name="q10" value="false"> ទេ</label><br>
+      <label><input type="radio" name="q10" value="false"> ម្តងម្កាល</label>
+    </div>
+
+    <button type="submit">បញ្ចូន</button>
+  </form>
+
+  <p class="result" id="result"></p>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      let score = 0, total = 10;
+      for (let i = 1; i <= total; i++) {
+        let a = document.querySelector(`input[name="q${i}"]:checked`);
+        if (a && a.value === 'true') score++;
+      }
+      let pct = Math.round(score / total * 100);
+      document.getElementById('result').textContent = `ភាគរយភាពស្មោះត្រង់របស់អ្នកគឺ: ${pct}%`;
+    });
+  </script>
+</body>
+</html>
